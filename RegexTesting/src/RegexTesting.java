@@ -150,9 +150,8 @@ public class RegexTesting {
 
 	private static void phoneNumberCheck(Scanner in) 
 	{
-		// TODO Auto-generated method stub
 		String input = in.nextLine();
-		if(input.matches("^(\\([0-9]{3}\\) | [0-9]{3}) ([0-9]{3}-[0-9]{4}$) | [0-9]{3} [0-9]{4})$"))
+		if(input.matches("^(\\([0-9]{3}\\)|[0-9]{3}) ([0-9]{3}-[0-9]{4}$|[0-9]{3} [0-9]{4})$"))
 		{
 			System.out.println("Valid US Phone Number.");
 		}
