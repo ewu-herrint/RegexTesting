@@ -30,116 +30,143 @@ public class RegexTesting {
 		
 		printMenu();
 		
-		String choice = in.nextLine();
-		
-		menuChoice(choice, in);
+		String choice;
+		do
+		{
+			choice = in.nextLine();
+			choice = menuChoice(choice, in);
+		}while(!choice.matches("q"));
+			
 		
 		in.close();
 	}
 
-	private static void menuChoice(String choice, Scanner in) 
+	private static String menuChoice(String choice, Scanner in) 
 	{
 		switch(choice)
 		{
 			case "a":
 				socialSecurityCheck(in);
-				break;
+				return "z";
 			case "b":
 				phoneNumberCheck(in);
-				break;
+				return "z";
 			case "c":
 				emailCheck(in);
-				break;
+				return "z";
 			case "d":
 				nameCheck(in);
-				break;
+				return "z";
 			case "e":
 				dateCheck(in);
-				break;
+				return "z";
 			case "f":
 				addressCheck(in);
-				break;
+				return "z";
 			case "g":
 				cityCheck(in);
-				break;
+				return "z";
 			case "h":
 				timeCheck(in);
-				break;
+				return "z";
 			case "i":
 				currencyCheck(in);
-				break;
+				return "z";
 			case "j":
 				urlCheck(in);
-				break;
+				return "z";
 			case "k":
 				passwordCheck(in);
-				break;
+				return "z";
 			case "l":
 				alphaOddIonCheck(in);
-				break;
+				return "z";
 			case "q":
 				// Quit program.
-				break;
+				return "q";
 		}
+		return "q";
 	}
 
-	private static void alphaOddIonCheck(Scanner in) {
+	private static void alphaOddIonCheck(Scanner in) 
+	{
 		// TODO Auto-generated method stub
 		
 	}
 
-	private static void passwordCheck(Scanner in) {
+	private static void passwordCheck(Scanner in) 
+	{
 		// TODO Auto-generated method stub
 		
 	}
 
-	private static void urlCheck(Scanner in) {
+	private static void urlCheck(Scanner in) 
+	{
 		// TODO Auto-generated method stub
 		
 	}
 
-	private static void currencyCheck(Scanner in) {
+	private static void currencyCheck(Scanner in) 
+	{
 		// TODO Auto-generated method stub
 		
 	}
 
-	private static void timeCheck(Scanner in) {
+	private static void timeCheck(Scanner in) 
+	{
 		// TODO Auto-generated method stub
 		
 	}
 
-	private static void dateCheck(Scanner in) {
+	private static void dateCheck(Scanner in) 
+	{
 		// TODO Auto-generated method stub
 		
 	}
 
-	private static void cityCheck(Scanner in) {
+	private static void cityCheck(Scanner in) 
+	{
 		// TODO Auto-generated method stub
 		
 	}
 
-	private static void addressCheck(Scanner in) {
+	private static void addressCheck(Scanner in) 
+	{
 		// TODO Auto-generated method stub
 		
 	}
 
-	private static void nameCheck(Scanner in) {
+	private static void nameCheck(Scanner in) 
+	{
 		// TODO Auto-generated method stub
 		
 	}
 
-	private static void emailCheck(Scanner in) {
+	private static void emailCheck(Scanner in) 
+	{
 		// TODO Auto-generated method stub
 		
 	}
 
-	private static void phoneNumberCheck(Scanner in) {
+	private static void phoneNumberCheck(Scanner in) 
+	{
 		// TODO Auto-generated method stub
 		
 	}
 
-	private static void socialSecurityCheck(Scanner in) {
-		// TODO Auto-generated method stub
+	private static void socialSecurityCheck(Scanner in)
+	{
+		String input = in.nextLine();
+		if(input.matches("^[0-9]{3}-[0-9]{2}-[0-9]{4}$") 
+						|| input.matches("^[0-9]{3} [0-9]{2} [0-9]{4}$") 
+						|| input.matches("^[0-9]{9}$"))
+		{
+			System.out.println("Valid Social Security Number.");
+		}
+		else
+		{
+			System.out.println("Invalid Social Security Number.");
+		}
 		
 	}
 
