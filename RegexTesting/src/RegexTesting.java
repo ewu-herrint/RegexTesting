@@ -90,14 +90,27 @@ public class RegexTesting {
 
 	private static void alphaOddIonCheck(Scanner in) 
 	{
-		// TODO Auto-generated method stub
-		
+		String input = in.nextLine();
+		if(!(input.length() % 2 == 0))
+		{
+			if(input.matches("^[a-zA-Z]*ion$"))
+			{
+				System.out.println("Valid odd ion word.");
+			}
+			else
+			{
+				System.out.println("Invalid odd ion word.");
+			}
+		}
+		else
+		{
+			System.out.println("Invalid odd ion word.");
+		}
 	}
 
 	private static void passwordCheck(Scanner in) 
 	{
 		// TODO Auto-generated method stub
-		
 	}
 
 	private static void urlCheck(Scanner in) 
