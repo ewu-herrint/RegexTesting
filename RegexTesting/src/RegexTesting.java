@@ -154,7 +154,16 @@ public class RegexTesting {
 	private static void addressCheck(Scanner in) 
 	{
 		// TODO Auto-generated method stub
-		
+		// Need to implement ability to do "1st St" etc.
+		String input = in.nextLine();
+		if(input.matches("^[0-9]{1, 5}, [A-Z][a-z]+ ((St.|Rd.|Ave.|Blvd.)|(Street|Road|Avenue|Boulevard))$"))
+		{
+			System.out.println("Valid Name.");
+		}
+		else
+		{
+			System.out.println("Invalid Name.");
+		}
 	}
 
 	private static void nameCheck(Scanner in) 
