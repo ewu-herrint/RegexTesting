@@ -146,8 +146,15 @@ public class RegexTesting {
 
 	private static void nameCheck(Scanner in) 
 	{
-		// TODO Auto-generated method stub
-		
+		String input = in.nextLine();
+		if(input.matches("^[A-Z][a-z]+,\\s*[A-Z][a-z]+,*\\s*[A-Z]*$"))
+		{
+			System.out.println("Valid Name.");
+		}
+		else
+		{
+			System.out.println("Invalid Name.");
+		}
 	}
 
 	private static void emailCheck(Scanner in) 
@@ -167,7 +174,6 @@ public class RegexTesting {
 		{
 			System.out.println("Invalid US Phone Number.");
 		}
-		
 	}
 
 	private static void socialSecurityCheck(Scanner in)
