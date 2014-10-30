@@ -120,7 +120,15 @@ public class RegexTesting {
 
 	private static void dateCheck(Scanner in) 
 	{
-		// TODO Auto-generated method stub
+		String input = in.nextLine();
+		if(input.matches("^(0[1-9]|1[012])([-/])(0[1-9]|[12][0-9]|3[01])\\2(19|20)\\d\\d"))
+		{
+			System.out.println("Valid Date.");
+		}
+		else
+		{
+			System.out.println("Invalid Date.");
+		}
 		
 	}
 
@@ -151,7 +159,7 @@ public class RegexTesting {
 	private static void phoneNumberCheck(Scanner in) 
 	{
 		String input = in.nextLine();
-		if(input.matches("^(\\([0-9]{3}\\)|[0-9]{3}) ([0-9]{3}-[0-9]{4}$|[0-9]{3} [0-9]{4})$"))
+		if(input.matches("^(\\([0-9]{3}\\)|^[0-9]{3}) ([0-9]{3}-[0-9]{4}$|[0-9]{3} [0-9]{4})$"))
 		{
 			System.out.println("Valid US Phone Number.");
 		}
