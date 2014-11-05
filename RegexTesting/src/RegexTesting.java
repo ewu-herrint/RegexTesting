@@ -168,7 +168,7 @@ public class RegexTesting {
 		String state = input.substring(stateLoc, stateLoc+2);
 		if(Arrays.binarySearch(states, state) >= 0 && stateLoc >= 0)
 		{
-			if(input.matches("^[A-Za-z]+, [A-Z]{2} [0-9]{5}$"))
+			if(input.matches("^[A-Za-z-]+, [A-Z]{2} [0-9]{5}$"))
 			{
 				System.out.println("Valid City/State/ZIP.");
 			}
@@ -185,15 +185,16 @@ public class RegexTesting {
 
 	private static void addressCheck(Scanner in) 
 	{
-		// TODO Need to implement ability to do "1st St" etc.
+		// NESW (West |East |North |South |Northwest |Northeast |Southwest |Southeast|[NS]*W. |[NS]*E. |N. |S. )*
+		// 1st,2nd,3rd, 4th ([A-Z][a-z]+|[2-9]*1st|[2-9]*2nd|[2-9]*3rd|[1-9]*[4-9]th)
 		String input = in.nextLine();
-		if(input.matches("^[0-9]{1, 5}, [A-Z][a-z]+ ((St.|Rd.|Ave.|Blvd.)|(Street|Road|Avenue|Boulevard))$"))
+		if(input.matches("^[0-9]{1,5} [A-za-z0-9-\\. ]+ (St.|Rd.|Ave.|Blvd.|Street|Road|Avenue|Boulevard)$"))
 		{
-			System.out.println("Valid Name.");
+			System.out.println("Valid Address.");
 		}
 		else
 		{
-			System.out.println("Invalid Name.");
+			System.out.println("Invalid Adress.");
 		}
 	}
 
