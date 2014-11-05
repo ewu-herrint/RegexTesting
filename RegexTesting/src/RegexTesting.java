@@ -116,8 +116,15 @@ public class RegexTesting {
 
 	private static void urlCheck(Scanner in) 
 	{
-		// TODO Auto-generated method stub
-		
+		String input = in.nextLine();
+		if(input.matches("^(http://|https://)?[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}(\\[A-Za-z0-9.-\\]*)*"))
+		{
+			System.out.println("Valid URL.");
+		}
+		else
+		{
+			System.out.println("Invalid URL.");
+		}
 	}
 
 	private static void currencyCheck(Scanner in) 
@@ -137,7 +144,6 @@ public class RegexTesting {
 		{
 			System.out.println("Invalid Time.");
 		}
-		
 	}
 
 	private static void dateCheck(Scanner in) 
