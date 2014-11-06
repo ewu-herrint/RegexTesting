@@ -130,7 +130,7 @@ public class RegexTesting {
 	private static void currencyCheck(Scanner in) 
 	{
 		String input = in.nextLine();
-		if(input.matches("^\\$[0-9]{1,3}(?:,[0-9]{3})*\\.[0-9]{2}$"))
+		if(input.matches("^\\$[0-9]{1,3}(,[0-9]{3})*\\.[0-9]{2}$"))
 		{
 			System.out.println("Valid Currency Value.");
 		}
