@@ -117,7 +117,7 @@ public class RegexTesting {
 	private static void urlCheck(Scanner in) 
 	{
 		String input = in.nextLine();
-		if(input.matches("^(http://|https://)?[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}(\\[A-Za-z0-9.-\\]*)*"))
+		if(input.matches("^(http://|https://)?[A-Za-z0-9\\.-]+\\.[A-Za-z]{2,4}(/[A-Za-z0-9\\.-/]*)*$"))
 		{
 			System.out.println("Valid URL.");
 		}
@@ -129,8 +129,15 @@ public class RegexTesting {
 
 	private static void currencyCheck(Scanner in) 
 	{
-		// TODO Auto-generated method stub
-		
+		String input = in.nextLine();
+		if(input.matches("^\\$[0-9]{1,3}(?:,[0-9]{3})*\\.[0-9]{2}$"))
+		{
+			System.out.println("Valid Currency Value.");
+		}
+		else
+		{
+			System.out.println("Invalid Currency Value.");
+		}
 	}
 
 	private static void timeCheck(Scanner in) 
