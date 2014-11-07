@@ -112,10 +112,28 @@ public class RegexTesting {
 	private static void passwordCheck(Scanner in) 
 	{
 		// TODO Auto-generated method stub
+		String input = in.nextLine();
+		if(input.length() > 9)
+		{
+			if(input.matches("[A-Z]") /*&& input.matches("[a-z]+") && input.matches("[0-9]+")
+					&& input.matches("\\p{punct}+") && !(input.matches("[a-z]{3,}+"))*/)
+			{
+				System.out.println("Valid password.");
+			}
+			else
+			{
+				System.out.println("Invalid password.");
+			}
+		}
+		else
+		{
+			System.out.println("Invalid pass word length.");
+		}
 	}
 
 	private static void urlCheck(Scanner in) 
 	{
+		//TODO Check for other chars that might be in a URL
 		String input = in.nextLine();
 		if(input.matches("^(http://|https://)?[A-Za-z0-9\\.-]+\\.[A-Za-z]{2,4}(/[A-Za-z0-9\\.-/]*)*$"))
 		{
@@ -240,7 +258,7 @@ public class RegexTesting {
 	private static void phoneNumberCheck(Scanner in) 
 	{
 		String input = in.nextLine();
-		if(input.matches("^(\\([0-9]{3}\\)|^[0-9]{3}) ([0-9]{3}-[0-9]{4}$|[0-9]{3} [0-9]{4})$"))
+		if(input.matches("^(\\([0-9]{3}\\)|^[0-9]{3})([- ])[0-9]{3}\\2[0-9]{4}$"))
 		{
 			System.out.println("Valid US Phone Number.");
 		}
