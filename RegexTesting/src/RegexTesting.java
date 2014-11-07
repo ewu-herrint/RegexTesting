@@ -1,10 +1,9 @@
+// Tyler Herrin
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Scanner;
-
-// Tyler Herrin
-
 
 public class RegexTesting {
 
@@ -111,12 +110,12 @@ public class RegexTesting {
 
 	private static void passwordCheck(Scanner in) 
 	{
-		// TODO Auto-generated method stub
 		String input = in.nextLine();
 		if(input.length() > 9)
 		{
-			if(input.matches("[A-Z]") /*&& input.matches("[a-z]+") && input.matches("[0-9]+")
-					&& input.matches("\\p{punct}+") && !(input.matches("[a-z]{3,}+"))*/)
+			System.out.println(input);
+			if(input.matches(".*[A-Z].*") && input.matches(".*[a-z].*") && input.matches(".*[0-9].*")
+					&& input.matches(".*\\p{Punct}.*") && !(input.matches(".*[a-z]{3,}.*")))
 			{
 				System.out.println("Valid password.");
 			}
@@ -127,7 +126,7 @@ public class RegexTesting {
 		}
 		else
 		{
-			System.out.println("Invalid pass word length.");
+			System.out.println("Invalid password length.");
 		}
 	}
 
