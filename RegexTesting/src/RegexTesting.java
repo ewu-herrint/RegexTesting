@@ -132,9 +132,8 @@ public class RegexTesting {
 
 	private static void urlCheck(Scanner in) 
 	{
-		//TODO Check for other chars that might be in a URL
 		String input = in.nextLine();
-		if(input.matches("^(http://|https://)?[A-Za-z0-9\\.-]+\\.[A-Za-z]{2,4}(/[A-Za-z0-9\\.-/]*)*$"))
+		if(input.matches("^(http://|https://)?[A-Za-z0-9\\p{Punct}]+\\.[A-Za-z]{2,4}(/[A-Za-z0-9\\p{Punct}]*)*$"))
 		{
 			System.out.println("Valid URL.");
 		}
@@ -194,11 +193,11 @@ public class RegexTesting {
 		                   "VA","WA","WV","WI","WY"};
 		
 		String input = in.nextLine();
-		int stateLoc = input.indexOf(",") + 1;
-		String state = input.substring(stateLoc, stateLoc+2);
+		int stateLoc = input.indexOf(",") + 2;
+		String state = input.substring(stateLoc, stateLoc + 2);
 		if(Arrays.binarySearch(states, state) >= 0 && stateLoc >= 0)
 		{
-			if(input.matches("^[A-Za-z-]+, [A-Z]{2} [0-9]{5}$"))
+			if(input.matches("^[A-Za-z\\. -]+, [A-Z]{2} [0-9]{5}$"))
 			{
 				System.out.println("Valid City/State/ZIP.");
 			}
@@ -209,7 +208,7 @@ public class RegexTesting {
 		}
 		else
 		{
-			System.out.println("Invalid City/State/ZIP.");
+			System.out.println("Invalid State.");
 		}
 	}
 
@@ -231,7 +230,7 @@ public class RegexTesting {
 	private static void nameCheck(Scanner in) 
 	{
 		String input = in.nextLine();
-		if(input.matches("^[A-Z][a-z]+,\\s*[A-Z][a-z]+,*\\s*[A-Z]*$"))
+		if(input.matches("^[A-Z][a-z]+,\\s*[A-Z][a-z-]+,*\\s*[A-Z]*$"))
 		{
 			System.out.println("Valid Name.");
 		}
@@ -269,6 +268,7 @@ public class RegexTesting {
 
 	private static void socialSecurityCheck(Scanner in)
 	{
+		//TODO Check for invalid social security numbers.
 		String input = in.nextLine();
 		if(input.matches("^[0-9]{3}-[0-9]{2}-[0-9]{4}$") 
 						|| input.matches("^[0-9]{3} [0-9]{2} [0-9]{4}$") 
